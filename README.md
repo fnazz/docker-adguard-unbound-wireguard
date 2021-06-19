@@ -1,6 +1,6 @@
-# Author - Naaz F - 19/06/2021
+# Docker Compose for AdGuard, Unbound and WireGuard VPN
 
-Docker Compose file for :
+Docker Compose file contains :
 - adguard - https://hub.docker.com/r/adguard/adguardhome
 - unbound - https://hub.docker.com/r/mvance/unbound
 - wireguard vpn - https://hub.docker.com/r/linuxserver/wireguard
