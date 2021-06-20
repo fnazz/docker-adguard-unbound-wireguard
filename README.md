@@ -1,5 +1,7 @@
-## Safe Internet - Solution
-This solution is a combination of WireGuard, PiHole, and Unbound in a docker-compose project with the intent of enabling users to quickly and easily create and deploy a personally managed full or split-tunnel WireGuard VPN with ad blocking capabilities (via Pihole), and DNS caching with additional privacy options (via Unbound). 
+## Safe Internet with Adguard, Unbound and WireGuard - Solution
+This solution is a combination of WireGuard, AdGuard, and Unbound in a docker-compose project with the intent of enabling users to quickly and easily create and deploy a personally managed full or split-tunnel WireGuard VPN with ad blocking capabilities , family safe search, parental controls(via AdGuard), and DNS caching with additional privacy options (via Unbound). 
+
+Read the full post at https://naazf.medium.com/safe-internet-with-adguard-unbound-and-wireguard-ee912808c7a8 
 
 ## Author
 **Naaz F**
@@ -112,9 +114,9 @@ Modify your wireguard client `AllowedIps` to `10.2.0.0/24` to only tunnel the we
 
 ---
 
-## Client Setup:
+# Client Setup:
 
-# Mobile Devices
+## Mobile Devices
 1. Download WireGuard VPN Client App from 
     Google Play Store: https://play.google.com/store/apps/details?id=com.wireguard.android&hl=en&gl=US 
 
