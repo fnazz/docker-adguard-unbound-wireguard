@@ -57,13 +57,14 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-
 # wirehole
 git clone https://github.com/naazf/docker-adguard-unbound-wireguard.git &&
     cd wirehole &&
-    docker-compose up
+    docker-compose up -d 
 
 ```
+Run folowing from the host get the QR code:
 
-Output contains the QR Code:
 
 ```bash
+ubuntu@adguard-wireguard:~$ sudo docker logs wireguard
 wireguard    | **** Internal subnet is set to 10.6.0.0 ****
 wireguard    | **** Peer DNS servers will be set to 10.2.0.100 ****
 wireguard    | **** No found wg0.conf found (maybe an initial install), generating 1 server and 1 peer/client confs ****
