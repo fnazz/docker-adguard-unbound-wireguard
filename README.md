@@ -3,8 +3,11 @@ This solution is a combination of WireGuard, AdGuard, and Unbound in a docker-co
 
 Read the full post at https://naazf.medium.com/safe-internet-with-adguard-unbound-and-wireguard-ee912808c7a8 
 
+If you are after fully automated solution using terraform on Oracle OCI , head to 
+https://github.com/fnazz/oracle-freetier-tf-adguard-unbound-wireguard 
+
 ## Author
-**Naaz F**
+**Naz F**
 
 Docker Compose file contains :
 - adguard - https://hub.docker.com/r/adguard/adguardhome
