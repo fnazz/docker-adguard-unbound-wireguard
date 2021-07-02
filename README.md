@@ -57,9 +57,9 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-
     sudo chmod +x /usr/local/bin/docker-compose &&
     sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-# wirehole
-git clone https://github.com/naazf/docker-adguard-unbound-wireguard.git &&
-    cd wirehole &&
+# docker-adguard-unbound-wireguard
+git clone https://github.com/fnazz/docker-adguard-unbound-wireguard.git &&
+    cd docker-adguard-unbound-wireguard &&
     docker-compose up -d 
 
 ```
