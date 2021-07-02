@@ -6,6 +6,7 @@ Read the full post at https://naazf.medium.com/safe-internet-with-adguard-unboun
 If you are after fully automated solution using terraform on Oracle OCI , head to 
 https://github.com/fnazz/oracle-freetier-tf-adguard-unbound-wireguard 
 
+
 ## Author
 **Naz F**
 
