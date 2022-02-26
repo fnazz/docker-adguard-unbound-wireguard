@@ -63,18 +63,18 @@ services:
       - 10.2.0.200 # Points to unbound
     environment:
       TZ: "Europe/London"
-      WEBPASSWORD: "" # Blank password - Can be whatever you want.
-      ServerIP: 10.1.0.100 # Internal IP of pihole
-      DNS1: 10.2.0.200 # Unbound IP
-      DNS2: 10.2.0.200 # If we don't specify two, it will auto pick google.
+      #WEBPASSWORD: "" # Blank password - Can be whatever you want.
+      #ServerIP: 10.1.0.100 # Internal IP of pihole
+      #DNS1: 10.2.0.200 # Unbound IP
+      #DNS2: 10.2.0.200 # If we don't specify two, it will auto pick google.
     # Volumes store your data between container upgrades
     volumes:
       - "./opt-adguard-work:/opt/adguardhome/work"
       - "./opt-adguard-conf:/opt/adguardhome/conf"
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
-    cap_add:
-      - NET_ADMIN
+    #cap_add:
+    #  - NET_ADMIN
     networks:
       private_network:
         ipv4_address: 10.2.0.100
