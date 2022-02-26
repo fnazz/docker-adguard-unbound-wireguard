@@ -33,20 +33,15 @@ services:
       - SERVERPORT=51820
       #- SERVERURL=my.ddns.net #optional - For use with DDNS (Uncomment to use)
       - PEERS=1 # How many peers to generate for you (clients)
-      - PEERDNS=10.2.0.100 # Set it to point to adguard
+      - PEERDNS=10.2.0.100 # Set it to point to adguard home
       - INTERNAL_SUBNET=10.6.0.0
-      
     volumes:
       - ./wireguard:/config
       - /lib/modules:/lib/modules
     ports:
       - "51820:51820/udp"
-    dns:
-      - 10.2.0.100 # Points to pihole
-      - 10.2.0.200 # Points to unbound
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
-
     restart: unless-stopped
     networks:
       private_network:
@@ -58,17 +53,10 @@ services:
     image: adguard/adguardhome
     restart: unless-stopped
     hostname: adguard
-    dns:
-      - 127.0.0.1
-      - 10.2.0.200 # Points to unbound
-    environment:
-      TZ: "Europe/London"
     # Volumes store your data between container upgrades
     volumes:
       - "./opt-adguard-work:/opt/adguardhome/work"
       - "./opt-adguard-conf:/opt/adguardhome/conf"
-    cap_add:
-      - NET_ADMIN
     networks:
       private_network:
         ipv4_address: 10.2.0.100
