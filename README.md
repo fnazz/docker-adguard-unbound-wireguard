@@ -18,9 +18,17 @@ Docker Compose file contains :
 Contains initial unbound.conf as well
 
 ## Prerequisites:
-
+- Install docker: https://docs.docker.com/engine/install/
+- Install docker-compose: https://docs.docker.com/compose/install/
+- Run docker as non-root: https://docs.docker.com/engine/install/linux-postinstall/
 - ☁ If using a cloud provider:
     - You need to allow ingress to port `51820`
+
+## Docker Default Setting
+| Container | IP |
+| AdGuard Home | 10.2.0.100 |
+| Unbound | 10.2.0.200|
+| Wireguard IP range | 10.6.0.0 |
 
 ### Quickstart
 To get started all you need to do is clone the repository and spin up the containers.
@@ -28,44 +36,10 @@ To get started all you need to do is clone the repository and spin up the contai
 ```bash
 git clone https://github.com/naazf/docker-adguard-unbound-wireguard.git
 cd docker-adguard-unbound-wireguard
-docker-compose up
+docker-compose up -d
 ```
 
-### Full Setup
-```bash
-# Prereqs and docker
-sudo apt-get update &&
-    sudo apt-get install -yqq \
-        curl \
-        git \
-        apt-transport-https \
-        ca-certificates \
-        gnupg-agent \
-        software-properties-common
-
-# Install Docker repository and keys
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-sudo add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-        $(lsb_release -cs) \
-        stable" &&
-    sudo apt-get update &&
-    sudo apt-get install docker-ce docker-ce-cli containerd.io -yqq
-
-# docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &&
-    sudo chmod +x /usr/local/bin/docker-compose &&
-    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-
-# docker-adguard-unbound-wireguard
-git clone https://github.com/fnazz/docker-adguard-unbound-wireguard.git &&
-    cd docker-adguard-unbound-wireguard &&
-    docker-compose up -d 
-
-```
 Run folowing from the host get the QR code:
-
 
 ```bash
 ubuntu@adguard-wireguard:~$ sudo docker logs wireguard
@@ -114,7 +88,6 @@ wireguard    | [cont-init.d] done.
 wireguard    | [services.d] starting services
 ```
 ## Recommended configuration / Split tunnel:
-
 Modify your wireguard client `AllowedIps` to `10.2.0.0/24` to only tunnel the web panel and DNS traffic.
 
 ---
@@ -123,8 +96,5 @@ Modify your wireguard client `AllowedIps` to `10.2.0.0/24` to only tunnel the we
 
 ## Mobile Devices
 1. Download WireGuard VPN Client App from 
-    Google Play Store: https://play.google.com/store/apps/details?id=com.wireguard.android&hl=en&gl=US 
-
-    Apple Store: https://apps.apple.com/gb/app/wireguard/id1441195209
-2. 
-
+   - Google Play Store: https://play.google.com/store/apps/details?id=com.wireguard.android&hl=en&gl=US 
+   - Apple Store: https://apps.apple.com/gb/app/wireguard/id1441195209
