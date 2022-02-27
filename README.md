@@ -29,7 +29,7 @@ Contains initial unbound.conf as well
 |--------------------|------------|
 | AdGuard Home       | 10.2.0.100 |
 | Unbound            | 10.2.0.200 |
-| Wireguard IP range | 10.6.0.0   |
+| Wireguard IP range | 10.6.0.0/24|
 
 ## Quickstart
 To get started all you need to do is clone the repository and spin up the containers.
