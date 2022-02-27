@@ -10,7 +10,7 @@ https://github.com/fnazz/oracle-freetier-tf-adguard-unbound-wireguard
 ## Author
 **Naz F**
 
-Docker Compose file contains :
+Docker Compose file contains:
 - adguard - https://hub.docker.com/r/adguard/adguardhome
 - unbound - https://hub.docker.com/r/mvance/unbound
 - wireguard vpn - https://hub.docker.com/r/linuxserver/wireguard
@@ -24,14 +24,14 @@ Contains initial unbound.conf as well
 - ☁ If using a cloud provider:
     - You need to allow ingress to port `51820`
 
-## Docker Default Setting
+## Docker Default Setting:
 | Container          | IP         |
 |--------------------|------------|
 | AdGuard Home       | 10.2.0.100 |
 | Unbound            | 10.2.0.200 |
 | Wireguard IP range | 10.6.0.0   |
 
-### Quickstart
+## Quickstart
 To get started all you need to do is clone the repository and spin up the containers.
 
 ```bash
@@ -88,14 +88,15 @@ wireguard    | [cont-init.d] 99-custom-scripts: exited 0.
 wireguard    | [cont-init.d] done.
 wireguard    | [services.d] starting services
 ```
+
+## Access Adguard Interface (IMPORTANT)
+While connected to WireGuard, navigate to http://10.2.0.100:3000 first to setup AdGuard Home before DNS query and adblocking to work.
+
 ## Recommended configuration / Split tunnel:
-Modify your wireguard client `AllowedIps` to `10.2.0.0/24` to only tunnel the web panel and DNS traffic.
+~~Modify your wireguard client `AllowedIps` to `10.2.0.0/24` to only tunnel the web panel and DNS traffic.~~
 
----
-
-# Client Setup:
-
-## Mobile Devices
-1. Download WireGuard VPN Client App from 
-   - Google Play Store: https://play.google.com/store/apps/details?id=com.wireguard.android&hl=en&gl=US 
-   - Apple Store: https://apps.apple.com/gb/app/wireguard/id1441195209
+## Wireguard Client Setup:
+1. Android: https://serversideup.net/how-to-configure-a-wireguard-android-vpn-client/
+2. iOS: https://serversideup.net/how-to-configure-a-wireguard-ios-client/
+3. Windows 10: https://serversideup.net/how-to-configure-a-wireguard-windows-10-vpn-client/
+4. Linux/Ubuntu: https://tech.serhatteker.com/post/2021-01/how-to-set-up-wireguard-client-on-ubuntu-desktop/
