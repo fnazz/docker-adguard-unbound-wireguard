@@ -26,6 +26,7 @@ Contains initial unbound.conf as well
 
 ## Docker Default Setting
 | Container | IP |
+|-----|-----|
 | AdGuard Home | 10.2.0.100 |
 | Unbound | 10.2.0.200|
 | Wireguard IP range | 10.6.0.0 |
