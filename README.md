@@ -88,6 +88,24 @@ wireguard    | [cont-init.d] 99-custom-scripts: exited 0.
 wireguard    | [cont-init.d] done.
 wireguard    | [services.d] starting services
 ```
+## Modifying the upstream DNS provider for Unbound
+If you choose to not use Cloudflare any reason you are able to modify the upstream DNS provider in `unbound.conf`.
+
+Search for `forward-zone` and modify the IP addresses for your chosen DNS provider.
+
+>**NOTE:** The anything after `#` is a comment on the line. 
+What this means is it is just there to tell you which DNS provider you put there. It is for you to be able to reference later. I recommend updating this if you change your DNS provider from the default values.
+
+
+```yaml
+forward-zone:
+        name: "."
+        forward-addr: 1.1.1.1@853#cloudflare-dns.com
+        forward-addr: 1.0.0.1@853#cloudflare-dns.com
+        forward-addr: 2606:4700:4700::1111@853#cloudflare-dns.com
+        forward-addr: 2606:4700:4700::1001@853#cloudflare-dns.com
+        forward-tls-upstream: yes
+```
 
 ## Access Adguard Interface (IMPORTANT)
 While connected to WireGuard, navigate to http://10.2.0.100:3000 first to setup AdGuard Home before DNS query and adblocking to work.
