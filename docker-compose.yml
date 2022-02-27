@@ -56,8 +56,8 @@ services:
     hostname: adguard
     # Volumes store your data between container upgrades
     volumes:
-      - "./opt-adguard-work:/opt/adguardhome/work"
-      - "./opt-adguard-conf:/opt/adguardhome/conf"
+      - "./adguard/opt-adguard-work:/opt/adguardhome/work"
+      - "./adguard/opt-adguard-conf:/opt/adguardhome/conf"
     networks:
       private_network:
         ipv4_address: 10.2.0.100
