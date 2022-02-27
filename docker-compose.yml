@@ -35,7 +35,7 @@ services:
       - PEERS=1 # How many peers to generate for you (clients)
       - PEERDNS=10.2.0.100 # Set it to point to adguard home
       - INTERNAL_SUBNET=10.6.0.0
-      - ALLOWEDIPS=10.2.0.0/24 # Split tunnel for web panel and DNS traffic only
+      #- ALLOWEDIPS=10.2.0.0/24 # optional - split tunnel for web panel and DNS traffic only
     volumes:
       - ./wireguard:/config
       - /lib/modules:/lib/modules
