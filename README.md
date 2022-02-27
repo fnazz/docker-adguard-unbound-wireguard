@@ -91,7 +91,7 @@ wireguard    | [services.d] starting services
 ## Modifying the upstream DNS provider for Unbound
 If you choose to not use Cloudflare any reason you are able to modify the upstream DNS provider in `unbound.conf`.
 
-Search for `forward-zone` and modify the IP addresses for your chosen DNS provider.
+Search for `forward-zone` and modify the IP addresses for your chosen DNS [provider](https://docs.pi-hole.net/guides/dns/upstream-dns-providers/).
 
 >**NOTE:** The anything after `#` is a comment on the line. 
 What this means is it is just there to tell you which DNS provider you put there. It is for you to be able to reference later. I recommend updating this if you change your DNS provider from the default values.
